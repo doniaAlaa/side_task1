@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:mini_flutter_pro/configrations/app_localization.dart';
-import 'package:mini_flutter_pro/get_movies_poster/movie_controller.dart';
+import 'package:mini_flutter_pro/configrations/app_model.dart';
 import 'package:mini_flutter_pro/get_movies_poster/movies_poster_screen.dart';
 import 'package:flutter/cupertino.dart';
 
@@ -9,10 +9,31 @@ void main() {
   runApp(const MyApp());
 }
 
-class MyApp extends StatelessWidget {
+class MyApp extends StatefulWidget {
   const MyApp({Key? key}) : super(key: key);
 
-  // This widget is the root of your application.
+  @override
+  State<MyApp> createState() => _MyAppState();
+}
+
+class _MyAppState extends State<MyApp> {
+  late AppController controller;
+
+  @override
+  void initState() {
+    controller = AppController();
+    controller.init();
+    Get.put(controller);
+    super.initState();
+  }
+
+  @override
+  void dispose() {
+    controller.onClose();
+    Get.delete<AppController>();
+    super.dispose();
+  }
+
   @override
   Widget build(BuildContext context) {
     return GetMaterialApp(

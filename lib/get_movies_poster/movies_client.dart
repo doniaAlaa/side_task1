@@ -24,4 +24,21 @@ class MoviesClient {
 
     return ApiResult<SuccessMoviesResponse>(isSuccess: false, statusMessage: result.status_message);
   }
+
+  // Future<ApiResult<RequestListOutputModel?>> getRequestList(RequestListInputModel model) async {
+  //   var url = '/api/hr/business-request?count=${model.count}&offset=${model.offset}';
+  //   if (model.requestId != null) {
+  //     url += '&requestId=${model.requestId}';
+  //   }
+  //   if (model.category != null) {
+  //     url += '&category=${model.category}';
+  //   }
+  //   if (model.mode != null) {
+  //     url += '&mode=${model.mode}';
+  //   }
+  //
+  //   return _getRequestList(url,
+  //       resultFactory: (json) => RequestListResponse.fromJson(json), token: _model.token, logger: _logger);
+  // }
+
 }

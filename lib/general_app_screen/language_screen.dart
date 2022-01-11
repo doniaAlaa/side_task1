@@ -109,7 +109,7 @@ class LanguageScreenState extends State<LanguageScreen> {
       ),
     );
     Get.updateLocale(Locale(AppLocalizations.languagesMap.entries.firstWhere((e) => e.value == selectedLanguage).key));
-    await AppModel.of(context).updateLocale();
+    await Get.find<AppController>().updateLocale();
     Navigator.pop(context);
     Navigator.pop(context);
   }
@@ -120,7 +120,13 @@ class LanguageScreenState extends State<LanguageScreen> {
 // class LanguageScreen extends StatelessWidget {
 //   @override
 //   Widget build(BuildContext context) {
-//     // TODO: implement build
-//     throw UnimplementedError();
+//     return GridView.count(
+//       crossAxisCount: 2,
+//       children: List.generate(100, (index) {
+//         return Center(
+//           child: Text("bkbjkbkb"),
+//         );
+//       }),
+//     );
 //   }
 // }

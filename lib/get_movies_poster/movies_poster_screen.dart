@@ -59,5 +59,13 @@ class MoviesPostersSuccessWidget extends StatelessWidget {
       itemBuilder: (context, index) => MovieItemWidget(successMovieOutputModel: successMovieOutputModel[index]),
       itemCount: successMovieOutputModel.length,
     );
+    // return IncrementallyLoadingListView(
+    //   shrinkWrap: true,
+    //   itemCount: () => successMovieOutputModel.length,
+    //   loadMoreOffsetFromBottom: 1,
+    //   hasMore: () => state.hasMore,
+    //   loadMore: () async => await controller.loadMoreRequests(context),
+    //   itemBuilder: (context, index) => MovieItemWidget(successMovieOutputModel: successMovieOutputModel[index]),
+    // );
   }
 }
