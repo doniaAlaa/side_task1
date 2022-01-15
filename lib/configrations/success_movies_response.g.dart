@@ -31,6 +31,8 @@ SuccessOutputData _$SuccessOutputDataFromJson(Map<String, dynamic> json) =>
       original_title: json['original_title'] as String,
       genre_ids:
           (json['genre_ids'] as List<dynamic>).map((e) => e as int).toList(),
+      original_language: json['original_language'] as String,
+      vote_average: (json['vote_average'] as num).toDouble(),
     );
 
 Map<String, dynamic> _$SuccessOutputDataToJson(SuccessOutputData instance) =>
@@ -41,4 +43,6 @@ Map<String, dynamic> _$SuccessOutputDataToJson(SuccessOutputData instance) =>
       'release_date': instance.release_date.toIso8601String(),
       'original_title': instance.original_title,
       'genre_ids': instance.genre_ids,
+      'original_language': instance.original_language,
+      'vote_average': instance.vote_average,
     };

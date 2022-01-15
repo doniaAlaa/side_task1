@@ -21,6 +21,8 @@ class SuccessOutputData {
   final DateTime release_date;
   final String original_title;
   final List<int> genre_ids;
+  final String original_language;
+  final double vote_average;
 
   SuccessOutputData(
       {required this.poster_path,
@@ -28,7 +30,9 @@ class SuccessOutputData {
       required this.overview,
       required this.release_date,
       required this.original_title,
-      required this.genre_ids});
+      required this.genre_ids,
+      required this.original_language,
+      required this.vote_average});
 
   factory SuccessOutputData.fromJson(Map<String, dynamic> json) => _$SuccessOutputDataFromJson(json);
 
