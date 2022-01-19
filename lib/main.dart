@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:mini_flutter_pro/configrations/app_localization.dart';
 import 'package:mini_flutter_pro/configrations/app_model.dart';
-import 'package:mini_flutter_pro/get_movies_poster/movies_poster_screen.dart';
 import 'package:flutter/cupertino.dart';
+import 'package:mini_flutter_pro/login/login_screen.dart';
 
 void main() {
   runApp(const MyApp());
@@ -50,7 +50,7 @@ class _MyAppState extends State<MyApp> {
         // is not restarted.
         primarySwatch: Colors.blue,
       ),
-      home: MoviesPosters(),
+      home: LoginScreen(),
       translations: AppLocalizations(),
       locale: Locale('en'),
       // initialRoute: '/',

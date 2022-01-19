@@ -1,5 +1,4 @@
 import 'package:get/get.dart';
-import 'package:mini_flutter_pro/app_styling/custom_loading_indicator.dart';
 import 'package:mini_flutter_pro/app_theme/app_toast.dart';
 import 'package:mini_flutter_pro/configrations/success_movies_response.dart';
 import 'package:mini_flutter_pro/get_movies_poster/movies_client.dart';
@@ -35,6 +34,7 @@ class MovieController extends GetxController {
       pageNumber++;
       var currentPage = pageNumber + 1;
       if (currentPage <= 33) {
+        // to not lost the first page (adding next pages to the last pages without lost any previous pages)
         _setState(MoviesSuccessState(state.successMovieOutputModel + result.outputModel!.results, true));
       } else {
         showToast(msg: "something went wrong ");
